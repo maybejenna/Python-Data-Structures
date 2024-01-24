@@ -1,4 +1,12 @@
 def sum_pairs(nums, goal):
+    sum = set()
+    for num in nums:
+        complement = goal - num
+        if complement in sum:
+            return (complement, num)
+        sum.add(num)
+    return ()
+
     """Return tuple of first pair of nums that sum to goal.
 
     For example:
@@ -21,3 +29,9 @@ def sum_pairs(nums, goal):
         >>> sum_pairs([11, 20, 4, 2, 1, 5], 100)
         ()
     """
+
+
+print(sum_pairs([1, 2, 2, 10], 4))
+print(sum_pairs([4, 2, 10, 5, 1], 6))
+print(sum_pairs([5, 1, 4, 8, 3, 2], 7))
+print(sum_pairs([11, 20, 4, 2, 1, 5], 100))

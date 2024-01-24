@@ -1,4 +1,6 @@
 def mode(nums):
+    mode = statistics.mode(nums)
+    return mode
     """Return most-common number in list.
 
     For this function, there will always be a single-most-common value;
@@ -11,3 +13,5 @@ def mode(nums):
         >>> mode([2, 2, 3, 3, 2])
         2
     """
+
+print(mode([1, 2, 1]))

@@ -1,4 +1,7 @@
 def friend_date(a, b):
+    friend_a_hobbies = set(a[2])
+    friend_b_hobbies = set(b[2])
+    return bool(friend_a_hobbies & friend_b_hobbies)
     """Given two friends, do they have any hobbies in common?
 
     - a: friend #1, a tuple of (name, age, list-of-hobbies)
@@ -16,3 +19,10 @@ def friend_date(a, b):
         >>> friend_date(sauron, gandalf)
         True
     """
+
+elmo = ('Elmo', 5, ['hugging', 'being nice'])
+sauron = ('Sauron', 5000, ['killing hobbits', 'chess'])
+gandalf = ('Gandalf', 10000, ['waving wands', 'chess'])
+
+print(friend_date(elmo, sauron))
+print(friend_date(sauron, gandalf))
