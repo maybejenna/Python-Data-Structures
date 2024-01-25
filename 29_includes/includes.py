@@ -1,4 +1,13 @@
 def includes(collection, sought, start=None):
+    if isinstance(collection, dict):
+        return sought in collection.values()
+    if isinstance(collection, set):
+        return sought in collection
+    if start is not None:
+        if isinstance(collection, (list, str, tuple)):
+            return sought in collection[start:]
+    return sought in collection
+
     """Is sought in collection, starting at index start?
 
     Return True/False if sought is in the given collection:
@@ -30,3 +39,11 @@ def includes(collection, sought, start=None):
         >>> includes({"apple": "red", "berry": "blue"}, "blue")
         True
     """
+
+    print(includes([1, 2, 3], 1))  # True
+    print(includes([1, 2, 3], 1, 2))  # False
+    print(includes("hello", "o"))  # True
+    print(includes(('Elmo', 5, 'red'), 'red', 1))  # True
+    print(includes({1, 2, 3}, 1))  # True
+    print(includes({1, 2, 3}, 1, 3))  # True (start ignored)
+    print(includes({"apple": "red", "berry": "blue"}, "blue"))

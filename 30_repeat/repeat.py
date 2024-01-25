@@ -1,4 +1,5 @@
 def repeat(phrase, num):
+    return phrase * num
     """Return phrase, repeated num times.
 
         >>> repeat('*', 3)
@@ -18,3 +19,6 @@ def repeat(phrase, num):
         >>> repeat('abc', 'nope') is None
         True
     """
+
+print  (repeat('*', 3))
+print  (repeat('abc', 2))
